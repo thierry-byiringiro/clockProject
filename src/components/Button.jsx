@@ -1,0 +1,13 @@
+export default function ({ value, onClick, backgroundColor }) {
+  return (
+    <>
+      <button
+        onClick={onClick}
+        className="flex items-center justify-center font-bold bg-gray-500 p-2 rounded-md w-20 cursor-pointer"
+        style={{ backgroundColor: backgroundColor }}
+      >
+        {value}
+      </button>
+    </>
+  );
+}

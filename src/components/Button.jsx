@@ -1,4 +1,4 @@
-export default function ({ value, onClick, backgroundColor }) {
+export default function Button ({ value, onClick, backgroundColor }) {
   return (
     <>
       <button

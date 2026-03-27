@@ -23,19 +23,20 @@ export default function StopWatch() {
       }, 10);
     }
     return () => clearInterval(intervalId);
-  },[isRunning]);
+  }, [isRunning]);
   return (
     <>
-      <div className="flex flex-col items-center justify-center gap-15">
+      <fieldset className="flex flex-col items-center justify-center gap-6 border border-gray-400 p-6 rounded-lg">
+        <legend className="px-2 font-bold text-2xl text-gray-500">Stopwatch</legend>
         <div>
-          <DisplayTime elapsedTime={seconds} />
+          <DisplayTime elapsedTime={seconds} source="StopWatch" />
         </div>
         <div className="flex space-x-5 ">
           <Button onClick={start} value="Start" backgroundColor="green" />
           <Button onClick={stop} value="Stop" backgroundColor="#FF7F7F" />
           <Button onClick={reset} value="Reset" backgroundColor="blue" />
         </div>
-      </div>
+      </fieldset>
     </>
   );
 }

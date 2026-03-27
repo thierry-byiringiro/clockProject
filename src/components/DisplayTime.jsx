@@ -1,4 +1,4 @@
-export default function DisplayTime({ elapsedTime }) {
+export default function DisplayTime({ elapsedTime,source }) {
   const isFinished = elapsedTime === 0;
   let minutes = Math.floor(elapsedTime / 60000);
   let seconds = Math.floor((elapsedTime % 60000) / 1000);
@@ -8,7 +8,7 @@ export default function DisplayTime({ elapsedTime }) {
   milliseconds = String(milliseconds).padStart(2, "0");
   return (
     <>
-      <div className={`font-bold text-2xl ${isFinished ? "text-red-700" : ""}`}>
+      <div className={`font-bold text-2xl ${source === 'Timer' ? isFinished ? "text-red-700" : "" : ""}`}>
         {minutes}:{seconds}:{milliseconds}
       </div>
     </>
